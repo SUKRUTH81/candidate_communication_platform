@@ -1,0 +1,37 @@
+# docker compose up --build   ->  http://localhost:5173
+services:
+  provider:
+    build: { context: ., dockerfile: provider/Dockerfile }
+    environment:
+      WEBHOOK_URL: http://api:8000/api/webhooks/provider/
+      WEBHOOK_SECRET: dev-webhook-secret
+      PROVIDER_API_KEY: dev-provider-key
+    ports: ["9000:9000"]
+
+  api:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    environment: &backend-env
+      SQLITE_PATH: /data/db.sqlite3
+      PROVIDER_BASE_URL: http://provider:9000
+      PROVIDER_API_KEY: dev-provider-key
+      WEBHOOK_SECRET: dev-webhook-secret
+      DJANGO_DEBUG: "0"
+      CORS_ALLOWED_ORIGINS: http://localhost:5173
+    volumes: ["data:/data"]
+    ports: ["8000:8000"]
+    depends_on: [provider]
+
+  worker:
+    build: { context: ., dockerfile: backend/Dockerfile }
+    command: python manage.py run_worker
+    environment: *backend-env
+    volumes: ["data:/data"]
+    depends_on: [api]
+
+  web:
+    build: { context: ., dockerfile: frontend/Dockerfile, args: { BACKEND_URL: "http://api:8000" } }
+    ports: ["5173:5173"]
+    depends_on: [api]
+
+volumes:
+  data:
