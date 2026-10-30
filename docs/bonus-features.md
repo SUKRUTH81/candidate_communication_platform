@@ -1,12 +1,12 @@
 # Hunar.ai Candidate Communication Platform - Bonus Features Guide
 
-This document provides a comprehensive verification and implementation reference for all **5 optional bonus features (A through E)** in the **Hunar.ai Candidate Communication Platform** (`anti gravity`).
+This document provides a comprehensive verification and implementation reference for all **5 optional bonus features (A through E)** in the **Hunar.ai Candidate Communication Platform** .
 
 ---
 
 ## 🌟 Executive Overview of Bonus Implementation
 
-| Bonus Feature | Spec Requirement | Implementation in `anti gravity` | Status | Code References |
+| Bonus Feature | Spec Requirement | Implementation` | Status | Code References |
 |---|---|---|---|---|
 | **A. Message Templates** | Create, edit, delete templates; variable substitution using candidate data. | Full CRUD at `/templates`, placeholder pills (`{{first_name}}`, `{{name}}`, `{{phone}}`, `{{email}}`), live preview, backend pre-rendering and validation. | ✅ **100% Implemented & Verified** | `backend/messaging/models.py:29`<br>`frontend/src/pages-ui/TemplatesPage.tsx`<br>`frontend/src/components/SendPanel.tsx:70` |
 | **B. Scheduled Messages** | Send messages at a future date/time; status reflects `Scheduled`, `Sent`, `Delivered`, etc.; ability to cancel. | Database field `scheduled_at`, `status=scheduled`, background worker auto-dispatch (`run_worker`), pre-dispatch cancellation endpoint and UI action. | ✅ **100% Implemented & Verified** | `backend/messaging/models.py:56`<br>`backend/messaging/management/commands/run_worker.py`<br>`frontend/src/pages-ui/ActivityPage.tsx:175`<br>`frontend/src/components/HistoryDrawer.tsx:60` |
@@ -89,12 +89,12 @@ When evaluating the `hunar-candidate-communication-platform-bonus-updated.zip` a
      - `TypeError: CommunicationAPITests.test_provider_timeout_is_uncertain_and_not_retryable()` (mock argument count mismatch)
      - `TypeError: CommunicationAPITests.test_unexpected_provider_error_is_sanitized_and_not_blindly_retried()` (missing positional argument)
      - `FAIL: test_simulate_status_rejects_unsupported_status_as_bad_request` (unexpected error message assertion)
-   - In contrast, the `anti gravity` project has **40/40 passing backend tests**, **6/6 provider contract tests**, and **12/12 frontend vitest tests**.
+  
 
 2. **Frontend Build & Type Safety:**
    - The archive notes in its own `verification-status.md` that frontend dependencies, `tsc --noEmit`, and `npm run build` were not verified in its packaging environment.
-   - In contrast, `anti gravity` frontend is built with **strict TypeScript (`.tsx`)**, verified with `npx tsc --noEmit` (**0 errors**), and builds cleanly with `next build`.
+
 
 3. **Conclusion:**
-   - `anti gravity` represents the complete, verified hybrid solution that already incorporates all the design goals and bonus specifications of the updated archive while fixing all mock test regressions and guaranteeing full type safety.
+   - verified hybrid solution that already incorporates all the design goals and bonus specifications of the updated archive while fixing all mock test regressions and guaranteeing full type safety.
 

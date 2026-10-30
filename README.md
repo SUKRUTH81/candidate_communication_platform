@@ -1,4 +1,4 @@
-# Hunar.ai Candidate Communication Platform (`anti gravity`)
+# Hunar.ai Candidate Communication Platform 
 
 > **Enterprise-grade recruiter communication platform** built for Hunar.ai. Manage candidates, send individual and bulk messages across channels, track real-time delivery journeys (`Sent → Delivered → Read`), handle transient and permanent provider failures with intelligent retries, and inspect the complete candidate communication history.
 

@@ -64,7 +64,6 @@ In addition, I integrated **real communication providers**:
 
 ### Option A: One-Click Local Run (Recommended)
 ```powershell
-cd "anti gravity"
 .\run.bat
 ```
 *(Automatically executes migrations, starts Django API on port 8000, starts the background worker, and launches the Next.js frontend on port 5173).*
@@ -79,10 +78,10 @@ docker compose up -d --build
 ## 📄 Repository & Documentation
 
 The repository includes extensive documentation:
-- [`README.md`](file:///d:/sukruth/hunar%20ai/anti%20gravity/README.md) — Architecture, installation, and design decisions.
-- [`docs/demo-script.md`](file:///d:/sukruth/hunar%20ai/anti%20gravity/docs/demo-script.md) — A 5-minute step-by-step interview demonstration script.
-- [`docs/deployment-guide.md`](file:///d:/sukruth/hunar%20ai/anti%20gravity/docs/deployment-guide.md) — Cloud deployment guides for Render, Railway, Docker, and Vercel.
-- [`docs/requirements-matrix.md`](file:///d:/sukruth/hunar%20ai/anti%20gravity/docs/requirements-matrix.md) — Comprehensive checklist mapping every line of the assignment prompt to source files.
+- [`README.md`](README.md) — Architecture, installation, and design decisions.
+- [`docs/demo-script.md`](docs/demo-script.md) — A 5-minute step-by-step interview demonstration script.
+- [`docs/deployment-guide.md`](docs/deployment-guide.md) — Cloud deployment guides for Render, Railway, Docker, and Vercel.
+- [`docs/requirements-matrix.md`](docs/requirements-matrix.md) — Comprehensive checklist mapping every line of the assignment prompt to source files.
 
 Thank you for this opportunity! I look forward to discussing the architecture and demonstrating the live platform.
 

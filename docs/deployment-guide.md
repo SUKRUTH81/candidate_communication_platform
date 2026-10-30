@@ -73,7 +73,7 @@ Render offers free web services and background workers with zero server maintena
 2. Connect your GitHub repository.
 3. Configure settings:
    - **Name:** `hunar-platform-api`
-   - **Root Directory:** `anti gravity/backend`
+   - **Root Directory:** `backend`
    - **Environment:** `Python 3`
    - **Build Command:** `pip install -r requirements.txt && python manage.py migrate`
    - **Start Command:** `gunicorn config.wsgi:application --bind 0.0.0.0:$PORT`
@@ -91,7 +91,7 @@ Render offers free web services and background workers with zero server maintena
 2. Connect the same repository.
 3. Configure settings:
    - **Name:** `hunar-platform-worker`
-   - **Root Directory:** `anti gravity/backend`
+   - **Root Directory:** `backend`
    - **Build Command:** `pip install -r requirements.txt`
    - **Start Command:** `python manage.py run_worker`
 4. Add the exact same environment variables as Step 2.
@@ -100,7 +100,7 @@ Render offers free web services and background workers with zero server maintena
 ### Step 4: Deploy Frontend on Vercel or Render
 1. Go to [Vercel](https://vercel.com/) ➔ **Add New Project**.
 2. Connect your GitHub repository.
-3. Set **Root Directory:** `anti gravity/frontend`.
+3. Set **Root Directory:** `frontend`.
 4. Add Environment Variable:
    - `NEXT_PUBLIC_API_BASE_URL=https://hunar-api.onrender.com/api`
 5. Click **Deploy**. Your live frontend is now connected to your cloud backend!

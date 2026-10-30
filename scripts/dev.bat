@@ -5,7 +5,7 @@ REM One-click local startup script for Windows: provider, backend API, backgroun
 cd /d "%~dp0\.."
 
 echo ===============================================================
-echo Starting Hunar Candidate Communication Platform (Anti Gravity)
+echo Starting Hunar Candidate Communication Platform
 echo ===============================================================
 
 REM Find Python executable
